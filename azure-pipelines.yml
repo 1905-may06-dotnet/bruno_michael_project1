@@ -1,0 +1,31 @@
+# ASP.NET Core
+# Build and test ASP.NET Core projects targeting .NET Core.
+# Add steps that run tests, create a NuGet package, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
+
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  pathtosolution: 'PizzaBoxWeb'
+  pathtoproject: 'PizzaBoxWeb/PizzaBoxWeb'
+  buildConfiguration: 'Release'
+
+steps:
+- script: dotnet build --configuration $(buildConfiguration)
+  displayName: 'dotnet build $(buildConfiguration)'
+  workingDirectory: $(pathtosolution)
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'publish'
+    projects: '$(pathtoproject)/*.csproj'
+- task: AzureWebApp@1
+  inputs:
+    azureSubscription: 'Free Trial(98319a34-14d7-4635-9df2-7e1c62e066ef)'
+    appType: 'webApp'
+    appName: 'PizzaBoxWebApplication'
+    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    deploymentMethod: 'auto'
