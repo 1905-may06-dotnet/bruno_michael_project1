@@ -10,6 +10,8 @@ pool:
   vmImage: 'ubuntu-latest'
 
 variables:
+  pathtosolution: 'PizzaBoxWeb'
+  pathtoproject: 'PizzaBoxWeb/PizzaBoxWeb'
   buildConfiguration: 'Release'
 
 steps:
