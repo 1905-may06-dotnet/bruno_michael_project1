@@ -17,3 +17,8 @@ variables:
 steps:
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'dotnet build $(buildConfiguration)'
+  workingDirectory: $(pathtosolution)
+  task: DotNetCoreCLI@2
+  inputs:
+    command: 'publish'
+    projects: '$(pathtoproject)/*.csproj'
