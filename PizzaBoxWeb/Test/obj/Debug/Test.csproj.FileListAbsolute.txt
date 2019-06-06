@@ -1,0 +1,14 @@
+C:\Users\micha\source\repos\PizzaBoxWeb\Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\micha\source\repos\PizzaBoxWeb\Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\micha\source\repos\PizzaBoxWeb\Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\micha\source\repos\PizzaBoxWeb\Test\bin\Debug\Test.dll
+C:\Users\micha\source\repos\PizzaBoxWeb\Test\bin\Debug\Test.pdb
+C:\Users\micha\source\repos\PizzaBoxWeb\Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\micha\source\repos\PizzaBoxWeb\Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\micha\source\repos\PizzaBoxWeb\Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\micha\source\repos\PizzaBoxWeb\Test\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\micha\source\repos\PizzaBoxWeb\Test\obj\Debug\Test.csprojAssemblyReference.cache
+C:\Users\micha\source\repos\PizzaBoxWeb\Test\obj\Debug\Test.csproj.CoreCompileInputs.cache
+C:\Users\micha\source\repos\PizzaBoxWeb\Test\obj\Debug\Test.csproj.CopyComplete
+C:\Users\micha\source\repos\PizzaBoxWeb\Test\obj\Debug\Test.dll
+C:\Users\micha\source\repos\PizzaBoxWeb\Test\obj\Debug\Test.pdb
