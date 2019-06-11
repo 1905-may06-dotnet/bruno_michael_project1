@@ -15,9 +15,43 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
+- task: SonarCloudPrepare@1
+  inputs:
+    SonarCloud: 'PizzaSonar'
+    organization: 'michaelbeneamatobruno-github'
+    scannerMode: 'MSBuild'
+    projectKey: '1e2927324795bd28be51a6905ae7b763e959cedf'
+  displayName: 'SonarCloudPrepare'
+
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'dotnet build $(buildConfiguration)'
   workingDirectory: $(pathtosolution)
+
+# BASIC TEST
+- script: dotnet test
+   --configuration $(buildConfiguration)
+   --logger trx
+   --no-build
+   --results-directory $(Build.ArtifactStagingDirectory)/test/
+    /p:CollectCoverage=true
+    /p:CoverletOutputFormat=opencover
+    /p:CoverletOutput='$(Build.ArtifactStagingDirectory)/coverage/'
+  workingDirectory: $(pathtosolution)
+  displayName: 'dotnet Test'
+
+- task: SonarCloudAnalyze@1
+
+- task: SonarCloudPublish@1
+  inputs:
+    pollingTimeoutSec: '300'
+
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'VSTest'
+    testResultsFiles: '*.trx'
+    searchFolder: '$(Build.ArtifactStagingDirectory)/test'
+  displayName: 'Publish test results '
+
 - task: DotNetCoreCLI@2
   inputs:
     command: 'publish'
